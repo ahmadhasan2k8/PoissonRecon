@@ -7,11 +7,12 @@ ${PROJECT_SOURCE_DIR}/src/PoissonReconApp.cpp
 
 source_group("src" FILES ${PROJECT_SRCS})
 
+find_package(Boost 1.66.0 REQUIRED)
 find_package( tinyxml2 REQUIRED )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
 
-target_link_libraries(${PROJECT_NAME} tinyxml2::tinyxml2 PoissonRecon)
+target_link_libraries(${PROJECT_NAME} tinyxml2::tinyxml2 PoissonRecon Boost::boost)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY FOLDER ${CMAKE_PROJECT_NAME}/apps)
 
